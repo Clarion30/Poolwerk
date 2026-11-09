@@ -130,6 +130,29 @@ Die Übersicht zeigt Wasserwerte, Temperaturen und Betriebszustände. Darunter l
 
 ![Poolwerk-Webportal mit Messwerten und Anlagenbedienung](bilder/webportal.png)
 
+## Chemie-Rechner
+
+Zum Webportal gehört ein **manuell bedienbarer Chemie-Rechner** mit Bereichen für aktives Chlor, Chlor / Schockchlorung, pH-Minus, pH-Plus sowie TA / Alkalinität. Er ergänzt die Anlagenbedienung um Berechnungen aus eingegebenen Messwerten, Zielwerten und Beckenvolumen.
+
+### Aktives Chlor
+
+Aus freiem Chlor (DPD1), Cyanursäure und pH-Wert berechnet der Rechner einen Modellwert für das aktiv wirksame Chlor (HOCl). Die Oberfläche kennzeichnet diesen ausdrücklich als **berechneten Wert bei 25 °C, nicht als Sensormessung**; die Angabe erfolgt als Cl₂-Äquivalent.
+
+![Chemie-Rechner für aktives Chlor mit Eingaben für DPD1, Cyanursäure und pH](bilder/chemie-rechner-aktives-chlor.png)
+
+### Chlorzugabe und Schockchlorung
+
+Für die Mengenberechnung werden Beckenvolumen, aktueller Chlorwert, selbst gewählter Zielwert und die Angaben zum verwendeten Chlorprodukt eingetragen. Bei Flüssigchlor wird das verfügbare Chlor in Gramm pro Liter laut Produktetikett angegeben. Das Ergebnis zeigt die berechnete Produktmenge.
+
+<details>
+<summary>Ansicht der Chlor-Mengenberechnung öffnen</summary>
+
+![Chemie-Rechner für Chlorzugabe und Schockchlorung mit Beckenvolumen und Produktangaben](bilder/chemie-rechner-chlormenge.png)
+
+</details>
+
+**Der Rechner verwendet keine Livewerte, verändert keine Anlagen-Sollwerte und löst keine Dosierung aus.** Die Eingaben werden nicht gespeichert. Die Berechnung ist eine separate Hilfe zur manuellen Wasserpflege; Produktangaben und Anwendungshinweise bleiben maßgeblich.
+
 ## Home Assistant
 
 Poolwerk ist über **ESPHome in Home Assistant eingebunden**. Mein Dashboard zeigt Wasserqualität, Temperaturen, Betriebszustände, Durchfluss, Filterdruck und Störungsmeldungen. Über „Poolwerk öffnen“ erreiche ich das eigene Webportal.
@@ -242,7 +265,7 @@ Poolwerk ist ein **Prototyp im laufenden Aufbau**, der bereits an meinem Pool ar
 
 ## Einstellungen und Diagnose
 
-Die Einstellungen sind nach Anlagenbereichen gegliedert. Dort lassen sich unter anderem Betriebsarten, vorhandene Komponenten, Sollwerte und Grenzen anpassen. Die Screenshots zeigen die Einstellungen meiner Anlage.
+Die Einstellungen sind nach Anlagenbereichen gegliedert. Dort lassen sich unter anderem Betriebsarten, vorhandene Komponenten, Sollwerte und Grenzen anpassen. Die Screenshots zeigen die Einstellungen meiner Anlage. Eine Suche erleichtert das Auffinden einzelner Einstellungen. Über die Kopfleiste sind außerdem Störungsquittierung, Live-Mitschreiber, Chemie-Rechner und Poolübersicht erreichbar.
 
 <details>
 <summary>Filterpumpe, Wärmepumpe sowie pH und Redox ansehen</summary>
