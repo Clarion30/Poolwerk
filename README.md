@@ -4,6 +4,8 @@
 
 Poolwerk ist die Steuerung, die ich für meine eigene Poolanlage gebaut habe. Filterung, Wasserpflege und Wasserwege lassen sich damit von einer Stelle aus bedienen und überwachen. Vorher lief meine Anlage mit einer ProCon.IP; beim Aufbau meines Webportals sind einige Ähnlichkeiten wiederzuerkennen.
 
+**Poolwerk deckt weit mehr als eine reine Dosier- oder Filtersteuerung ab.** Wasserpflege, Pumpen, Ventile, Wärmepumpe, Gegenstromanlage, Überwachung, Diagnose und Home Assistant sind in einer gemeinsamen Steuerung zusammengeführt. Dabei lässt sich der Funktionsumfang an die jeweilige Anlage anpassen.
+
 ## Für unterschiedliche Poolanlagen
 
 Poolwerk lässt sich an die vorhandene Pooltechnik anpassen: **Flüssigchlor-Dosierung oder Salzelektrolyse, pH-Minus und pH-Plus** können je nach Ausstattung genutzt werden. Die einzelnen Funktionen lassen sich unabhängig aktivieren oder deaktivieren.
