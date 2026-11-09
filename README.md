@@ -8,13 +8,13 @@ Poolwerk ist die Steuerung, die ich für meine eigene Poolanlage gebaut habe. Fi
 
 ## Warum Poolwerk entstanden ist
 
-Meine Pooltechnik steht im Keller. Die Sorge, dass bei einem Defekt Poolwasser austreten und den Keller überfluten könnte, war ein wesentlicher Antrieb für Poolwerk. Ich wollte Wasseraustritt erkennen, die betreffenden Wasserwege schließen lassen und eine zusätzliche Pumpe zum Abpumpen einbinden.
+**Poolwerk entstand einzig und allein deshalb, weil die ProCon.IP für meine Anlage zu wenige Analogregeln und Eingänge bot.** Für meine zusätzlichen Belimo-Antriebe und deren Endschalter benötigte ich mehr Anschluss- und Auswertungsmöglichkeiten.
 
-Bei meiner bisherigen ProCon.IP reichten die verfügbaren Analogregeln für meine Anforderungen nicht aus. Da eine entsprechende Softwareerweiterung nicht vorgesehen war, entstand die Idee einer eigenen Steuerung. Außerdem benötigte ich mehr Ein- und Ausgänge für die Belimo-Antriebe und ihre Endschalter.
+Meine Pooltechnik steht im Keller. Die Sorge, dass bei einem Defekt Poolwasser austreten und den Keller überfluten könnte, erklärt meine besonderen Anforderungen: Ich wollte Wasseraustritt erkennen, die betreffenden Wasserwege schließen lassen und eine zusätzliche Pumpe zum Abpumpen einbinden.
 
 Ein Fahrbefehl allein bestätigt keine Ventilstellung. Deshalb melden Endschalter in meinem Aufbau zurück, ob die offene oder geschlossene Endlage tatsächlich erreicht wurde. Diese Rückmeldungen waren von Anfang an ein wichtiger Bestandteil des Konzepts.
 
-Bei aller Freude an meinem eigenen Projekt möchte ich auch sagen: **Ich würde jederzeit wieder bei PoolDigital bestellen. Der Service von Alex ist für mich unschlagbar.** Die Entscheidung für Poolwerk entstand aus meinen besonderen Anforderungen und dem Wunsch, die Steuerung meiner Anlage selbst weiterzuentwickeln. Meine Wertschätzung für PoolDigital und die Unterstützung durch Alex bleibt davon unberührt.
+**Der Service von Alex ist für mich unschlagbar. Ich würde jederzeit wieder bei PoolDigital bestellen und werde meine Verbrauchsmaterialien auch weiterhin dort kaufen.** Meine Entscheidung für eine eigene Steuerung lag ausschließlich an der für meinen Aufbau benötigten Anzahl von Analogregeln und Eingängen. Meine Wertschätzung für PoolDigital und die Unterstützung durch Alex bleibt davon unberührt.
 
 ## Für unterschiedliche Poolanlagen
 
