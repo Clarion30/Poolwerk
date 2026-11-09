@@ -8,13 +8,30 @@ Poolwerk ist die Steuerung, die ich für meine eigene Poolanlage gebaut habe. Fi
 
 ## Eigenständiger Betrieb und Rolle von ESPHome
 
-**Poolwerk ist eine eigenständig arbeitende Poolsteuerung. Die Anlagenlogik läuft direkt auf dem ESP32-S3. Für den lokalen Anlagenbetrieb werden weder Home Assistant noch eine Cloud oder eine Internetverbindung benötigt.**
+**Poolwerk läuft allein. Auch wenn Home Assistant ausgeschaltet ist, neu startet oder vollständig ausfällt, arbeitet die lokale Poolsteuerung auf dem ESP32-S3 weiter. Home Assistant ist keine Voraussetzung für den Anlagenbetrieb.**
 
-Messwerterfassung, Regelung, Zeitprogramme, Ventilabläufe und die vorgesehenen Überwachungsfunktionen werden auf der Steuerung ausgeführt. Die Bedienung vor Ort erfolgt über zwei Displays und den Drehencoder. Das eigene Webportal wird ebenfalls vom ESP32 bereitgestellt; für dessen Aufruf ist lediglich eine lokale Netzwerkverbindung zur Steuerung erforderlich.
+Messwerterfassung, Regelung, Zeitprogramme, Ventilabläufe und die vorgesehenen Überwachungsfunktionen werden direkt auf dem ESP32 ausgeführt. Dafür benötigt Poolwerk weder einen laufenden Home-Assistant-Server noch eine Cloud oder Internetverbindung. Voraussetzung bleiben die Stromversorgung der Steuerung und die für die jeweilige Funktion angeschlossene Anlagentechnik.
 
-**ESPHome mit ESP-IDF bildet die technische Grundlage der Firmware.** Darauf baut die für Poolwerk entwickelte Anlagenlogik mit eigenen Abläufen, Freigaben, Diagnosen und Bedienoberflächen auf. Die Bezeichnung „ESPHome“ beschreibt somit die verwendete Plattform; sie bedeutet nicht, dass Home Assistant die Poolsteuerung ausführt.
+### Direkte Verarbeitung auf der Steuerung
 
-Home Assistant dient als **optionale zusätzliche Anzeige und Bedienmöglichkeit**. Über das Netzwerk bezogene Zusatzsignale, beispielsweise eine externe PV-Freigabe oder MQTT-Befehle, benötigen weiterhin ihre jeweilige Verbindung. Diese zusätzlichen Schnittstellen sind von der lokal ausgeführten Anlagenlogik zu unterscheiden.
+**Poolwerk ist auf schnelle, direkte Reaktionen ausgelegt:** Lokale Messwerte und Eingaben werden auf dem ESP32 verarbeitet, ohne den Umweg über Home Assistant oder einen Cloud-Dienst. Ein lokaler Schaltablauf muss deshalb nicht erst eine Antwort eines externen Servers abwarten. Eingestellte Wartezeiten, Messintervalle, Dosierpausen und Ventilfahrzeiten bleiben dabei bewusst wirksam; eine pauschale Reaktionszeit für alle Funktionen wird nicht zugesagt.
+
+### Was bei einem Ausfall von Home Assistant passiert
+
+| Funktion | Verhalten ohne Home Assistant |
+| --- | --- |
+| Lokale Anlagenlogik | Läuft auf dem ESP32 weiter |
+| Lokal eingerichtete Regelungen, Zeitprogramme und Überwachungen | Werden weiterhin auf der Steuerung ausgeführt |
+| Displays und Drehencoder | Bleiben direkt am Gerät bedienbar |
+| Eigenes Webportal | Bleibt über das lokale Netzwerk erreichbar, sofern die Netzwerkverbindung zur Steuerung besteht |
+| Home-Assistant-Dashboard und dort eingerichtete Automationen | Stehen während des HA-Ausfalls nicht zur Verfügung |
+| Externe Zusatzsignale, etwa PV-Freigaben oder MQTT-Befehle | Benötigen weiterhin ihre jeweilige Quelle und Verbindung; sie sind von der lokalen Anlagenlogik zu unterscheiden |
+
+### ESPHome als technische Grundlage
+
+**ESPHome mit ESP-IDF bildet die technische Grundlage der Firmware.** Darauf baut die für Poolwerk entwickelte Anlagenlogik mit eigenen Abläufen, Freigaben, Diagnosen und Bedienoberflächen auf. Die Bezeichnung „ESPHome“ bedeutet nicht, dass Home Assistant die Poolsteuerung ausführt.
+
+Home Assistant dient als **optionale zusätzliche Anzeige und Bedienmöglichkeit**. Die Steuerung selbst sitzt im Poolwerk-Gerät.
 
 ## Poolwerk auf einen Blick
 
