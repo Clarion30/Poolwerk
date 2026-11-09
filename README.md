@@ -2,38 +2,126 @@
 
 ![Poolwerk-Logo](bilder/poolwerk-logo.png)
 
-Poolwerk ist die Steuerung, die ich für meine eigene Poolanlage gebaut habe. Ich wollte Filterung, Wasserpflege und die Wasserwege von einer Stelle aus bedienen und sehen können, was gerade in der Anlage passiert. Vorher lief sie mit einer ProCon.IP. In meinem eigenen Webportal ist der Aufbau der Übersicht ähnlich.
+Poolwerk ist die Steuerung, die ich für meine eigene Poolanlage gebaut habe. Filterung, Wasserpflege und Wasserwege lassen sich damit von einer Stelle aus bedienen und überwachen. Vorher lief meine Anlage mit einer ProCon.IP; beim Aufbau meines Webportals sind einige Ähnlichkeiten wiederzuerkennen.
+
+## Für unterschiedliche Poolanlagen
+
+Poolwerk lässt sich an die vorhandene Pooltechnik anpassen: **Flüssigchlor-Dosierung oder Salzelektrolyse, pH-Minus und pH-Plus** können je nach Ausstattung genutzt werden. Die einzelnen Funktionen lassen sich unabhängig aktivieren oder deaktivieren.
+
+Auch **ohne Belimo-Antriebe oder andere motorisierte Ventile** ist ein Betrieb möglich. Ventilansteuerung und Endlagenrückmeldung können passend zur Anlage eingerichtet oder abgeschaltet werden.
+
+## Was Poolwerk übernimmt
+
+- **Filterpumpe und Wasserwege:** Wochenplan mit Drehzahlstufen, Überwachung von Durchfluss und Filterdruck sowie Rückmeldung der Ventilstellungen.
+- **Wasserpflege:** Messung von pH, Redox, freiem Chlor und Salz sowie die jeweils aktivierte Dosierung oder Elektrolyse.
+- **Weitere Pooltechnik:** Einbindung von Wärmepumpe, PV-Freigabe, Gegenstromanlage und Wassermeldern.
+- **Auswertung:** Messverläufe, Laufzeiten und Diagnose helfen dabei, den Betrieb und mögliche Störungen nachzuvollziehen.
 
 ## Webportal
 
-In der Übersicht sehe ich die Wasserwerte, Temperaturen und den Zustand der Filterpumpe auf einen Blick. Die Anlage kann ich im Browser oder direkt am Gerät bedienen.
+Die Übersicht zeigt Wasserwerte, Temperaturen und Betriebszustände. Darunter lassen sich die weiteren Anlagenteile bedienen und die Rückmeldungen der Wasserwege ansehen.
 
-![Übersicht im Poolwerk-Webportal mit Anlagenmesswerten, Wasserqualität, Temperaturen und Filterpumpe](bilder/webportal.png)
+![Poolwerk-Webportal mit Messwerten und Anlagenbedienung](bilder/webportal.png)
 
-## Anlage im Technikraum
+## Home Assistant
 
-| Wasserweg im Technikraum | Ventilantrieb mit Endschaltern |
-| --- | --- |
-| ![Ausschnitt der Verrohrung im Technikraum](bilder/wasserweg.jpg) | ![Montierter Ventilantrieb mit Rückmeldung der Endlagen](bilder/ventilantrieb.jpg) |
+Poolwerk ist über **ESPHome in Home Assistant eingebunden**. Mein Dashboard zeigt Wasserqualität, Temperaturen, Betriebszustände, Durchfluss, Filterdruck und Störungsmeldungen. Über „Poolwerk öffnen“ erreiche ich das eigene Webportal.
+
+<img src="bilder/home-assistant.png" alt="Poolwerk-Dashboard in Home Assistant mit Messwerten und Störungsanzeige" width="650">
+
+## Bedienung direkt am Gerät
+
+Zwei Displays und ein Drehknopf ermöglichen die Bedienung vor Ort. Das Menü führt zu Wasserwerten, Filterpumpe, Kalibrierung und Systemmeldungen; Störungen werden mit ihrer Ursache angezeigt.
+
+<img src="bilder/gehaeusefront-aktuell.jpg" alt="Poolwerk-Gehäuse mit zwei Displays und Drehknopf" width="650">
 
 <details>
-<summary>Gehäusefront mit zwei Displays</summary>
+<summary>Bedienmenü und Störungsanzeige ansehen</summary>
 
-<img src="bilder/gehaeusefront.jpg" alt="Geschlossenes Poolwerk-Gehäuse mit zwei Displays" width="300">
+| Bedienung mit Drehknopf | Beispiel einer Störungsmeldung |
+| --- | --- |
+| ![Bedienmenü am Gerät](bilder/display-bedienmenue.jpg) | ![Display mit Meldung zur Redox-Sicherheitsgrenze](bilder/display-stoerungsmeldung.jpg) |
 
 </details>
 
-## Was Poolwerk im Alltag übernimmt
+## Anlage im Technikraum
 
-- **Filterpumpe und Wasserwege.** Die Pumpe läuft nach einem Wochenplan mit einstellbaren Drehzahlstufen. Druck und Durchfluss zeigen, ob sie tatsächlich läuft. Endschalter an den motorisierten Ventilen melden zurück, wann die gewünschte Stellung erreicht ist.
-- **Wasserpflege.** Poolwerk erfasst pH, Redox, freies Chlor und Salz. Die Steuerung übernimmt auch die pH-Minus-Dosierung und die Salzelektrolyse.
-- **Weitere Pooltechnik.** Wärmepumpe, Gegenstromanlage und Wassermelder im Technikraum sind eingebunden. Die Wärmepumpe kann eine Freigabe von der PV-Anlage bekommen.
-- **Messverläufe und Diagnose.** Ich kann Messwerte und Laufzeiten nachsehen und bei Störungen erkennen, welche Rückmeldung oder Freigabe gerade fehlt.
+In meiner Anlage übernehmen Belimo-Antriebe die motorisierten Ventile. Angebaute Endschalter melden die Endlagen zurück, damit Poolwerk die erreichte Stellung erkennen kann.
 
-## Ein Beispiel aus dem Betrieb
+![Übersicht der Verrohrung, Ventile und Messzelle](bilder/technikraum-uebersicht.jpg)
 
-Im Live-Mitschreiber sehe ich, wie stark ein Messwert über einige Minuten schwankt. Hier ist ein Ausschnitt für den pH-Wert mit den einzelnen Messpunkten und der gemessenen Spanne.
+<details>
+<summary>Weitere Fotos von Wasserwegen, Pumpe und Endschaltern</summary>
 
-![Ungeglätteter pH-Verlauf im Poolwerk-Live-Mitschreiber](bilder/ph-verlauf.png)
+| Wasserweg im Technikraum | Ventilantrieb mit Endschaltern |
+| --- | --- |
+| ![Wasserweg im Technikraum](bilder/wasserweg.jpg) | ![Ventilantrieb mit Endschaltern](bilder/ventilantrieb.jpg) |
 
-Poolwerk läuft im Alltag an meinem eigenen Pool. Die automatische Frischwassernachfüllung ist als Erweiterung vorbereitet. Die Bilder zeigen einen Ausschnitt aus dem Projekt.
+| Verrohrung und Elektrolyse | Pumpe mit motorisierten Ventilen |
+| --- | --- |
+| ![Verrohrung und Elektrolyseeinheit](bilder/verrohrung-elektrolyse.jpg) | ![Pumpe und Ventile](bilder/pumpe-ventile.jpg) |
+
+| Belimo mit rotem Ventilgriff | Endschalter im Detail |
+| --- | --- |
+| ![Belimo-Antrieb mit rotem Ventilgriff](bilder/belimo-endschalter.jpg) | ![Belimo-Antrieb und Endschalter an der Pumpe](bilder/belimo-pumpe-detail.jpg) |
+
+</details>
+
+## Die Steuerung als Prototyp
+
+Poolwerk ist ein **Prototyp im laufenden Aufbau**, der bereits an meinem Pool arbeitet. Die offene Ansicht zeigt den tatsächlichen Entwicklungsstand mit Steuerungsmodulen, Relais und Verdrahtung.
+
+![Offene Poolwerk-Steuerung im Prototypenaufbau](bilder/steuerung-prototyp-offen.jpg)
+
+<details>
+<summary>Einbau der Steuerung im Technikraum</summary>
+
+![Poolwerk-Steuerung neben der Elektroverteilung](bilder/steuerung-technikraum.jpg)
+
+</details>
+
+## Einstellungen und Diagnose
+
+Die Einstellungen sind nach Anlagenbereichen gegliedert. Dort lassen sich unter anderem Betriebsarten, vorhandene Komponenten, Sollwerte und Grenzen anpassen. Die Screenshots zeigen die Einstellungen meiner Anlage.
+
+<details>
+<summary>Filterpumpe, Wärmepumpe sowie pH und Redox ansehen</summary>
+
+**Filterpumpe:** Zuordnung der Pumpenstufen und Ventile; weitere Reiter führen zu Betrieb, Wochenprogramm, Messwerten und Diagnose.
+
+![Einstellungen der Filterpumpe](bilder/einstellungen-filterpumpe.png)
+
+**Wärmepumpe:** Betriebsart, Schaltausgang, MQTT-Anbindung und zugehörige Ventile lassen sich passend zur Ausstattung einstellen.
+
+![Einstellungen der Wärmepumpe](bilder/einstellungen-waermepumpe.png)
+
+**pH und Redox:** Sollwerte, Anzeigebereiche und Regelgrenzen sind getrennt einstellbar. Kalibrierung und Messwerte haben eigene Reiter.
+
+![Einstellungen für pH und Redox](bilder/einstellungen-ph-redox.png)
+
+</details>
+
+<details>
+<summary>Systemdiagnose ansehen</summary>
+
+Die Systemansicht zeigt CPU-Auslastung, Temperatur, freien Speicher und Laufzeit. Zähler zu LAN-Unterbrechungen und Wiederherstellungen unterstützen die Fehlersuche.
+
+![Systemdiagnose mit CPU-, Speicher- und Netzwerkdaten](bilder/systemdiagnose.png)
+
+</details>
+
+## Messverläufe
+
+Der Live-Mitschreiber zeigt ungeglättete Messpunkte und ihre Spanne. So lässt sich beispielsweise verfolgen, wie stark der pH-Wert über einige Minuten schwankt.
+
+![Ungeglätteter pH-Verlauf](bilder/ph-verlauf.png)
+
+## Einblick in die Anleitung
+
+[**PDF-Leseprobe öffnen: erste vier Seiten der Anleitung 096-345**](dokumentation/Poolwerk_096-345_Anleitung_Leseprobe_Seiten_1-4.pdf)
+
+Der Auszug enthält Titelseite, Inhaltsverzeichnis, aktuelle Anschlüsse und Installation. Das Inhaltsverzeichnis bezieht sich auf die vollständige Anleitung. Auf der Steuerung liegt die passende vollständige Ausgabe unter **Einstellungen → System → Anleitung herunterladen (PDF)**.
+
+---
+
+Dies ist ein Ausschnitt aus dem Projekt. Die automatische Frischwassernachfüllung ist als Erweiterung vorbereitet. Das Repository dient der Vorstellung; Firmware und vollständige Projektquellen werden hier nicht bereitgestellt.
