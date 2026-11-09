@@ -174,13 +174,13 @@ In meiner Anlage übernehmen Belimo-Antriebe die motorisierten Ventile. Angebaut
 
 </details>
 
-## Wasseralarm und Abpumppumpe im Keller
+## Wasseralarm und Pumpe im Keller
 
-Ein Wassersensor erfasst austretendes Wasser. **Abhängig von seiner Meldung wird die zusätzliche Abpumppumpe ein- und wieder ausgeschaltet.** Sie soll das erkannte Wasser aus dem Technikraum abführen.
+Ein Wassersensor erfasst austretendes Wasser. **Abhängig von seiner Meldung wird die zusätzliche Pumpe ein- und wieder ausgeschaltet.** Sie soll das erkannte Wasser aus dem Technikraum abführen.
 
 Bei Wasseralarm fordert Poolwerk außerdem die dafür vorgesehenen motorisierten Ventile zum Schließen an. Über die Endschalter lässt sich prüfen, ob die angeforderten geschlossenen Endlagen erreicht wurden. Wassererkennung, Abpumpen und das Schließen der Wasserwege sollen gemeinsam einen möglichen Wasserschaden begrenzen.
 
-<img src="bilder/abpumppumpe-keller.jpg" alt="Zusätzliche Abpumppumpe mit Ablaufschlauch im Keller, deren Ein- und Ausschalten über die Wassererkennung gesteuert wird" width="600">
+<img src="bilder/abpumppumpe-keller.jpg" alt="Zusätzliche Pumpe mit Ablaufschlauch im Keller, deren Ein- und Ausschalten über die Wassererkennung gesteuert wird" width="600">
 
 Die Aufnahme zeigt die zusätzliche Pumpe im Technikraum. Die Beschreibung bezieht sich auf meinen konkreten Anlagenaufbau.
 
