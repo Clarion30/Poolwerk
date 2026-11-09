@@ -31,6 +31,23 @@ Bei motorisierten Ventilen werden die angeforderte Stellung und die vorhandenen 
 
 Die Rückspülfunktion unterstützt den Ablauf, ersetzt in meinem Aufbau aber nicht das manuelle Umstellen des Filterkopfs. Nach dem Rückspülen wird der reguläre Filterbetrieb bewusst wieder gestartet.
 
+### PhotoMOS: aktive Freigabe der externen Pumpensignale
+
+In meinem Aufbau schaltet ein **PhotoMOS den gemeinsamen Signal-GND der externen Drehzahlsteuerung der Filterpumpe**. Damit die betreffenden Steuersignale wirksam werden können, muss Poolwerk diese Verbindung aktiv freigeben. Der PhotoMOS schaltet dabei den Steuersignalweg, nicht die Netzversorgung der Pumpe.
+
+**Die Freigabe benötigt eine aktive Ansteuerung.** In der hier verwendeten, im unbestromten Zustand offenen Ausführung wird die Verbindung erst durch Einschalten des PhotoMOS hergestellt. Fällt die Versorgung der Steuerung aus, entfällt auch diese Ansteuerung: Die Verbindung öffnet und die externe Drehzahlfreigabe über diesen Signalweg fällt weg. So bleibt dieser Freigabeweg bei einem Stromausfall der Steuerung nicht einfach geschlossen.
+
+Das beschreibt gezielt das Verhalten dieser Schaltung. Wie die Pumpe bei fehlenden externen Signalen reagiert, hängt zusätzlich von ihrem Eingangskonzept und ihren Einstellungen ab; der PhotoMOS ist keine Trennung der Pumpen-Netzversorgung.
+
+Im Webportal wird **Kanal 01 als „PhotoMOS“** eingerichtet. Alternativ kann derselbe Kanal als normaler Optokoppler-Schaltausgang verwendet werden. Die Auswahl muss zum tatsächlich verbauten Bauteil und zur Verdrahtung passen. Sie bleibt nach einem Neustart gespeichert; beim Wechsel der Rolle wartet die Steuerung auf die bestätigte AUS-Stellung.
+
+<details>
+<summary>PhotoMOS-Auswahl und Ventilrückmeldungen im Webportal ansehen</summary>
+
+![Einstellung von Kanal 01 als PhotoMOS und Endlagenrückmeldung der Ventile](bilder/einstellungen-photomos.png)
+
+</details>
+
 ### Wasserpflege mit einstellbaren Grenzen
 
 Bei der automatischen Chlorsteuerung bestimmt der Redoxbedarf die Anforderung. Die separate Chlormessung liefert zusätzlich den gemessenen Chlorwert und begrenzt die Chlorzugabe. Je nach gewähltem Verfahren wird eine Flüssigchlor-Dosierpumpe oder die Salzelektrolyse angesteuert.
