@@ -14,6 +14,8 @@ Bei meiner bisherigen ProCon.IP reichten die verfügbaren Analogregeln für mein
 
 Ein Fahrbefehl allein bestätigt keine Ventilstellung. Deshalb melden Endschalter in meinem Aufbau zurück, ob die offene oder geschlossene Endlage tatsächlich erreicht wurde. Diese Rückmeldungen waren von Anfang an ein wichtiger Bestandteil des Konzepts.
 
+Bei aller Freude an meinem eigenen Projekt möchte ich auch sagen: **Ich würde jederzeit wieder bei PoolDigital bestellen. Der Service von Alex ist für mich unschlagbar.** Die Entscheidung für Poolwerk entstand aus meinen besonderen Anforderungen und dem Wunsch, die Steuerung meiner Anlage selbst weiterzuentwickeln. Meine Wertschätzung für PoolDigital und die Unterstützung durch Alex bleibt davon unberührt.
+
 ## Für unterschiedliche Poolanlagen
 
 Poolwerk lässt sich an die vorhandene Pooltechnik anpassen: **Flüssigchlor-Dosierung oder Salzelektrolyse, pH-Minus und pH-Plus** können je nach Ausstattung genutzt werden. Die einzelnen Funktionen lassen sich unabhängig aktivieren oder deaktivieren.
