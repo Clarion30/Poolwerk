@@ -6,6 +6,14 @@ Poolwerk ist die Steuerung, die ich für meine eigene Poolanlage gebaut habe. Fi
 
 **Poolwerk deckt weit mehr als eine reine Dosier- oder Filtersteuerung ab.** Wasserpflege, Pumpen, Ventile, Wärmepumpe, Gegenstromanlage, Überwachung, Diagnose und Home Assistant sind in einer gemeinsamen Steuerung zusammengeführt. Dabei lässt sich der Funktionsumfang an die jeweilige Anlage anpassen.
 
+## Warum Poolwerk entstanden ist
+
+Meine Pooltechnik steht im Keller. Die Sorge, dass bei einem Defekt Poolwasser austreten und den Keller überfluten könnte, war ein wesentlicher Antrieb für Poolwerk. Ich wollte Wasseraustritt erkennen, die betreffenden Wasserwege schließen lassen und eine zusätzliche Pumpe zum Abpumpen einbinden.
+
+Bei meiner bisherigen ProCon.IP reichten die verfügbaren Analogregeln für meine Anforderungen nicht aus. Da eine entsprechende Softwareerweiterung nicht vorgesehen war, entstand die Idee einer eigenen Steuerung. Außerdem benötigte ich mehr Ein- und Ausgänge für die Belimo-Antriebe und ihre Endschalter.
+
+Ein Fahrbefehl allein bestätigt keine Ventilstellung. Deshalb melden Endschalter in meinem Aufbau zurück, ob die offene oder geschlossene Endlage tatsächlich erreicht wurde. Diese Rückmeldungen waren von Anfang an ein wichtiger Bestandteil des Konzepts.
+
 ## Für unterschiedliche Poolanlagen
 
 Poolwerk lässt sich an die vorhandene Pooltechnik anpassen: **Flüssigchlor-Dosierung oder Salzelektrolyse, pH-Minus und pH-Plus** können je nach Ausstattung genutzt werden. Die einzelnen Funktionen lassen sich unabhängig aktivieren oder deaktivieren.
@@ -163,6 +171,16 @@ In meiner Anlage übernehmen Belimo-Antriebe die motorisierten Ventile. Angebaut
 | ![Belimo-Antrieb mit rotem Ventilgriff](bilder/belimo-endschalter.jpg) | ![Belimo-Antrieb und Endschalter an der Pumpe](bilder/belimo-pumpe-detail.jpg) |
 
 </details>
+
+## Wasseralarm und Abpumppumpe im Keller
+
+Ein Wassersensor erfasst austretendes Wasser. **Abhängig von seiner Meldung wird die zusätzliche Abpumppumpe ein- und wieder ausgeschaltet.** Sie soll das erkannte Wasser aus dem Technikraum abführen.
+
+Bei Wasseralarm fordert Poolwerk außerdem die dafür vorgesehenen motorisierten Ventile zum Schließen an. Über die Endschalter lässt sich prüfen, ob die angeforderten geschlossenen Endlagen erreicht wurden. Wassererkennung, Abpumpen und das Schließen der Wasserwege sollen gemeinsam einen möglichen Wasserschaden begrenzen.
+
+<img src="bilder/abpumppumpe-keller.jpg" alt="Zusätzliche Abpumppumpe mit Ablaufschlauch im Keller, deren Ein- und Ausschalten über die Wassererkennung gesteuert wird" width="600">
+
+Die Aufnahme zeigt die zusätzliche Pumpe im Technikraum. Die Beschreibung bezieht sich auf meinen konkreten Anlagenaufbau.
 
 ## Eigene Konstruktionen in Autodesk Fusion
 
