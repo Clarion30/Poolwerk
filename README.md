@@ -6,6 +6,16 @@ Poolwerk ist die Steuerung, die ich für meine eigene Poolanlage gebaut habe. Fi
 
 **Poolwerk deckt weit mehr als eine reine Dosier- oder Filtersteuerung ab.** Wasserpflege, Pumpen, Ventile, Wärmepumpe, Gegenstromanlage, Überwachung, Diagnose und Home Assistant sind in einer gemeinsamen Steuerung zusammengeführt. Dabei lässt sich der Funktionsumfang an die jeweilige Anlage anpassen.
 
+## Eigenständiger Betrieb und Rolle von ESPHome
+
+**Poolwerk ist eine eigenständig arbeitende Poolsteuerung. Die Anlagenlogik läuft direkt auf dem ESP32-S3. Für den lokalen Anlagenbetrieb werden weder Home Assistant noch eine Cloud oder eine Internetverbindung benötigt.**
+
+Messwerterfassung, Regelung, Zeitprogramme, Ventilabläufe und die vorgesehenen Überwachungsfunktionen werden auf der Steuerung ausgeführt. Die Bedienung vor Ort erfolgt über zwei Displays und den Drehencoder. Das eigene Webportal wird ebenfalls vom ESP32 bereitgestellt; für dessen Aufruf ist lediglich eine lokale Netzwerkverbindung zur Steuerung erforderlich.
+
+**ESPHome mit ESP-IDF bildet die technische Grundlage der Firmware.** Darauf baut die für Poolwerk entwickelte Anlagenlogik mit eigenen Abläufen, Freigaben, Diagnosen und Bedienoberflächen auf. Die Bezeichnung „ESPHome“ beschreibt somit die verwendete Plattform; sie bedeutet nicht, dass Home Assistant die Poolsteuerung ausführt.
+
+Home Assistant dient als **optionale zusätzliche Anzeige und Bedienmöglichkeit**. Über das Netzwerk bezogene Zusatzsignale, beispielsweise eine externe PV-Freigabe oder MQTT-Befehle, benötigen weiterhin ihre jeweilige Verbindung. Diese zusätzlichen Schnittstellen sind von der lokal ausgeführten Anlagenlogik zu unterscheiden.
+
 ## Poolwerk auf einen Blick
 
 | Bereich | Funktionen |
@@ -15,7 +25,7 @@ Poolwerk ist die Steuerung, die ich für meine eigene Poolanlage gebaut habe. Fi
 | Frischwasser | Automatische Nachfüllung – an meiner Anlage bereits in Betrieb |
 | Wasseralarm | Wassererkennung, Anforderung zum Schließen der vorgesehenen Ventile und sensorgesteuertes Ein-/Ausschalten der zusätzlichen Pumpe |
 | Weitere Technik | Wärmepumpe, PV-Freigabe und Gegenstromanlage |
-| Bedienung | Eigenes Webportal, zwei Displays mit Drehencoder und Home Assistant |
+| Bedienung | Lokal über eigenes Webportal und zwei Displays mit Drehencoder; Home Assistant optional |
 | Auswertung und Hilfen | Live-Mitschreiber, Diagnose, Konfigurationssicherung, Chemie-Rechner und PDF-Anleitung |
 | Eigene Konstruktionen | Belimo-Halterungen, Adapter, Mikroschalter-Pins, Sondenstopfen und Gehäusegestaltung in Fusion |
 
@@ -23,6 +33,7 @@ Die Ausstattung lässt sich an die jeweilige Anlage anpassen. Auch ein Betrieb o
 
 ## Inhaltsverzeichnis
 
+- [Eigenständiger Betrieb und Rolle von ESPHome](#eigenständiger-betrieb-und-rolle-von-esphome)
 - [Warum Poolwerk entstanden ist](#warum-poolwerk-entstanden-ist)
 - [Für unterschiedliche Poolanlagen](#für-unterschiedliche-poolanlagen)
 - [Was Poolwerk übernimmt](#was-poolwerk-übernimmt)
@@ -197,7 +208,7 @@ Für die Mengenberechnung werden Beckenvolumen, aktueller Chlorwert, selbst gew�
 
 ## Home Assistant
 
-Poolwerk ist über **ESPHome in Home Assistant eingebunden**. Mein Dashboard zeigt Wasserqualität, Temperaturen, Betriebszustände, Durchfluss, Filterdruck und Störungsmeldungen. Über „Poolwerk öffnen“ erreiche ich das eigene Webportal.
+Poolwerk ist in meiner Anlage zusätzlich über **ESPHome in Home Assistant eingebunden**. Diese Anbindung ist optional; die Anlagenlogik läuft auf dem ESP32. Mein Dashboard zeigt Wasserqualität, Temperaturen, Betriebszustände, Durchfluss, Filterdruck und Störungsmeldungen. Über „Poolwerk öffnen“ erreiche ich das eigene Webportal.
 
 <img src="bilder/home-assistant.png" alt="Poolwerk-Dashboard in Home Assistant mit Messwerten und Störungsanzeige" width="650">
 
