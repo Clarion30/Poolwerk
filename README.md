@@ -52,8 +52,6 @@ Meine Pooltechnik steht im Keller. Die Sorge, dass bei einem Defekt Poolwasser a
 
 Ein Fahrbefehl allein bestätigt keine Ventilstellung. Deshalb melden Endschalter in meinem Aufbau zurück, ob die offene oder geschlossene Endlage tatsächlich erreicht wurde. Diese Rückmeldungen waren von Anfang an ein wichtiger Bestandteil des Konzepts.
 
-**Der Service von Alex ist für mich unschlagbar. Ich würde jederzeit wieder bei PoolDigital bestellen und werde meine Verbrauchsmaterialien auch weiterhin dort kaufen.** Meine Entscheidung für eine eigene Steuerung lag ausschließlich an der für meinen Aufbau benötigten Anzahl von Analogregeln und Eingängen. Meine Wertschätzung für PoolDigital und die Unterstützung durch Alex bleibt davon unberührt.
-
 ## Für unterschiedliche Poolanlagen
 
 Poolwerk lässt sich an die vorhandene Pooltechnik anpassen: **Flüssigchlor-Dosierung oder Salzelektrolyse, pH-Minus und pH-Plus** können je nach Ausstattung genutzt werden. Die einzelnen Funktionen lassen sich unabhängig aktivieren oder deaktivieren.
