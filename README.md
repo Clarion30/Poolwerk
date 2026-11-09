@@ -221,6 +221,12 @@ Auch für das Gehäuse gibt es eine eigene Grundzeichnung in Fusion. Sie zeigt d
 
 Die Zeichnung zeigt den konstruktiven Ausgangspunkt; die Fotos der offenen Steuerung dokumentieren den tatsächlich weiterentwickelten Prototyp.
 
+### Gestaltung der Gehäusefront
+
+Die Gehäusefront habe ich ebenfalls in Fusion gestaltet. Die Zeichnung zeigt die beiden Displayausschnitte, das Poolwerk-Logo sowie die Sonne und das Wellenmotiv mit der Öffnung für den Drehencoder. So gehört auch die Gestaltung der Bedienfront zur eigenen Konstruktion.
+
+![Fusion-Ansicht der Poolwerk-Gehäusefront mit zwei Displayausschnitten, Logo, Sonne und Wellenmotiv](bilder/fusion-gehaeusefront.png)
+
 ## Die Steuerung als Prototyp
 
 Poolwerk ist ein **Prototyp im laufenden Aufbau**, der bereits an meinem Pool arbeitet. Die offene Ansicht zeigt den tatsächlichen Entwicklungsstand mit Steuerungsmodulen, Relais und Verdrahtung.
