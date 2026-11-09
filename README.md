@@ -54,7 +54,9 @@ Vier **MCP23017** erweitern den ESP32 um insgesamt **64 digitale Ein-/Ausgänge*
 
 Zwei **ADS1115-Messmodule** erfassen die analogen Signale. Ein Modul verarbeitet unter anderem Filterdruck, Elektrolysestrom, Batteriespannung der Echtzeituhr und das Bypass-Signal. Das zweite ist der galvanisch getrennten Chlormessung zugeordnet. Die Anzahl der vorgesehenen Kanäle bedeutet dabei nicht, dass jede angeschlossene Anlage alle Funktionen benötigt.
 
-### Galvanische Trennung
+### Rauscharme Versorgung und galvanische Trennung
+
+Die **Atlas-Carrier werden über einen LT3045-Spannungsregler versorgt**. Dieser besonders rauscharme Linearregler ist für empfindliche Messschaltungen ausgelegt und unterdrückt Störungen aus der Versorgung. Das ergänzt die galvanische Trennung der Messkreise und soll Versorgungseinflüsse auf die Sondenauswertung möglichst gering halten. [Herstellerinformationen zum LT3045](https://www.analog.com/en/products/lt3045.html).
 
 Die Messkreise für **pH, Redox, Leitfähigkeit und Chlor** sind galvanisch getrennt aufgebaut. Auch die Steuerungs- und Lastseite sind getrennt; ESP32 und Antriebe haben eigene Stromversorgungen.
 
