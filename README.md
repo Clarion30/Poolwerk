@@ -6,6 +6,44 @@ Poolwerk ist die Steuerung, die ich für meine eigene Poolanlage gebaut habe. Fi
 
 **Poolwerk deckt weit mehr als eine reine Dosier- oder Filtersteuerung ab.** Wasserpflege, Pumpen, Ventile, Wärmepumpe, Gegenstromanlage, Überwachung, Diagnose und Home Assistant sind in einer gemeinsamen Steuerung zusammengeführt. Dabei lässt sich der Funktionsumfang an die jeweilige Anlage anpassen.
 
+## Poolwerk auf einen Blick
+
+| Bereich | Funktionen |
+| --- | --- |
+| Wasserpflege | pH, Redox, freies Chlor und Salz; wahlweise Elektrolyse oder Flüssigchlor sowie einzeln aktivierbare pH-Minus-/pH-Plus-Funktionen |
+| Filterung und Wasserwege | Wochenprogramm, Pumpenstufen, Durchfluss und Filterdruck; optionale motorisierte Ventile mit Endlagenrückmeldung |
+| Frischwasser | Automatische Nachfüllung – an meiner Anlage bereits in Betrieb |
+| Wasseralarm | Wassererkennung, Anforderung zum Schließen der vorgesehenen Ventile und sensorgesteuertes Ein-/Ausschalten der zusätzlichen Pumpe |
+| Weitere Technik | Wärmepumpe, PV-Freigabe und Gegenstromanlage |
+| Bedienung | Eigenes Webportal, zwei Displays mit Drehencoder und Home Assistant |
+| Auswertung und Hilfen | Live-Mitschreiber, Diagnose, Konfigurationssicherung, Chemie-Rechner und PDF-Anleitung |
+| Eigene Konstruktionen | Belimo-Halterungen, Adapter, Mikroschalter-Pins, Sondenstopfen und Gehäusegestaltung in Fusion |
+
+Die Ausstattung lässt sich an die jeweilige Anlage anpassen. Auch ein Betrieb ohne motorisierte Ventile ist möglich.
+
+## Inhaltsverzeichnis
+
+- [Warum Poolwerk entstanden ist](#warum-poolwerk-entstanden-ist)
+- [Für unterschiedliche Poolanlagen](#für-unterschiedliche-poolanlagen)
+- [Was Poolwerk übernimmt](#was-poolwerk-übernimmt)
+- [Abläufe und Überwachung](#abläufe-und-überwachung)
+- [Hardware und technische Ausstattung](#hardware-und-technische-ausstattung)
+- [Webportal](#webportal)
+- [Chemie-Rechner](#chemie-rechner)
+- [Home Assistant](#home-assistant)
+- [Bedienung direkt am Gerät](#bedienung-direkt-am-gerät)
+- [Anlage im Technikraum](#anlage-im-technikraum)
+- [Automatische Frischwassernachfüllung](#automatische-frischwassernachfüllung)
+- [Wasseralarm und Pumpe im Keller](#wasseralarm-und-pumpe-im-keller)
+- [Eigene Konstruktionen in Autodesk Fusion](#eigene-konstruktionen-in-autodesk-fusion)
+- [Die Steuerung als Prototyp](#die-steuerung-als-prototyp)
+- [Einstellungen und Diagnose](#einstellungen-und-diagnose)
+- [Kalibrierung, Wartung und Fehlersuche](#kalibrierung-wartung-und-fehlersuche)
+- [Aus der Praxis entwickelt](#aus-der-praxis-entwickelt)
+- [Messverläufe](#messverläufe)
+- [Entwicklungsstand](#entwicklungsstand)
+- [Einblick in die Anleitung](#einblick-in-die-anleitung)
+
 ## Warum Poolwerk entstanden ist
 
 **Poolwerk entstand einzig und allein deshalb, weil die ProCon.IP für meine Anlage zu wenige Analogregeln und Eingänge bot.** Für meine zusätzlichen Belimo-Antriebe und deren Endschalter benötigte ich mehr Anschluss- und Auswertungsmöglichkeiten.
@@ -26,7 +64,7 @@ Auch **ohne Belimo-Antriebe oder andere motorisierte Ventile** ist ein Betrieb m
 
 - **Filterpumpe und Wasserwege:** Wochenplan mit Drehzahlstufen, Überwachung von Durchfluss und Filterdruck sowie Rückmeldung der Ventilstellungen.
 - **Wasserpflege:** Messung von pH, Redox, freiem Chlor und Salz sowie die jeweils aktivierte Dosierung oder Elektrolyse.
-- **Weitere Pooltechnik:** Einbindung von Wärmepumpe, PV-Freigabe, Gegenstromanlage und Wassermeldern.
+- **Weitere Pooltechnik:** Automatische Frischwassernachfüllung sowie Einbindung von Wärmepumpe, PV-Freigabe, Gegenstromanlage und Wassermeldern.
 - **Auswertung:** Messverläufe, Laufzeiten und Diagnose helfen dabei, den Betrieb und mögliche Störungen nachzuvollziehen.
 
 ## Abläufe und Überwachung
@@ -180,6 +218,21 @@ In meiner Anlage übernehmen Belimo-Antriebe die motorisierten Ventile. Angebaut
 
 ![Übersicht der Verrohrung, Ventile und Messzelle](bilder/technikraum-uebersicht.jpg)
 
+### Orientierung in der Anlage
+
+Die Übersicht und die Detailfotos darunter zeigen die folgenden Baugruppen. Die Tabelle erklärt ihre Aufgaben; sie ist kein Rohrleitungs- oder Anschlussplan.
+
+| Baugruppe | Auf den Fotos zu erkennen | Aufgabe |
+| --- | --- | --- |
+| Motorisierte Ventile | Orange Belimo-Antriebe an den Rohrleitungen, mit angebauten Mikroschaltern | Wasserwege umstellen und erreichte Endlagen zurückmelden |
+| Messzelle | Transparente Messkammer mit angeschlossenen Sonden | Wasserwerte an einer gemeinsamen Messstelle erfassen |
+| Elektrolyse | Elektrolyseeinheit in der separaten Detailaufnahme „Verrohrung und Elektrolyse“ | Chlorerzeugung bei freigegebenem Elektrolysebetrieb |
+| Pumpe und Ventile | Eigene Detailaufnahme „Pumpe mit motorisierten Ventilen“ | Pumpenaufbau und zugehörige Absperrungen zeigen |
+| Steuerungsgehäuse | Zwei Displays an der Front; offene Ansicht im Prototypenabschnitt | Messsignale auswerten, Abläufe steuern und Zustände anzeigen |
+| Zusätzliche Pumpe im Keller | Eigenes Foto im Abschnitt „Wasseralarm und Pumpe im Keller“ | Erfasstes Wasser abführen; über die Wassererkennung ein- und ausschalten |
+
+
+
 <details>
 <summary>Weitere Fotos von Wasserwegen, Pumpe und Endschaltern</summary>
 
@@ -196,6 +249,12 @@ In meiner Anlage übernehmen Belimo-Antriebe die motorisierten Ventile. Angebaut
 | ![Belimo-Antrieb mit rotem Ventilgriff](bilder/belimo-endschalter.jpg) | ![Belimo-Antrieb und Endschalter an der Pumpe](bilder/belimo-pumpe-detail.jpg) |
 
 </details>
+
+## Automatische Frischwassernachfüllung
+
+**Die automatische Frischwassernachfüllung ist an meiner Anlage in Betrieb.** Sie ergänzt die Wasserstandsüberwachung und übernimmt das Nachfüllen von Frischwasser. Einrichtung, Messwerte und Diagnose sind im Webportal unter **„Wasserstand und Frischwasser“** zusammengefasst.
+
+Damit gehört neben Wasserpflege und Filterbetrieb auch die Nachfüllung zur gemeinsamen Anlagensteuerung. Die Funktion wird passend zur vorhandenen Technik eingerichtet; eine Anlage ohne automatische Nachfüllung benötigt diesen Teil nicht.
 
 ## Wasseralarm und Pumpe im Keller
 
@@ -317,6 +376,18 @@ Der Live-Mitschreiber zeigt ungeglättete Messpunkte und ihre Spanne. So lässt 
 
 ![Ungeglätteter pH-Verlauf](bilder/ph-verlauf.png)
 
+## Entwicklungsstand
+
+**Stand: 9. November 2026.** Poolwerk arbeitet an meiner eigenen Poolanlage und wird im laufenden Projekt weiterentwickelt.
+
+| Stand | Einordnung |
+| --- | --- |
+| Im Betrieb | Die Steuerung mit der angeschlossenen Mess- und Anlagentechnik, Bedienung am Gerät, Webportal und Home-Assistant-Anbindung |
+| Frischwassernachfüllung | Installiert und in Betrieb; keine nur geplante Erweiterung mehr |
+| Je nach Ausstattung nutzbar | Alternative Wasserpflegeverfahren und optionale Verbraucher – nicht jede unterstützte Funktion ist gleichzeitig an meiner Anlage verbaut |
+| Laufende Weiterentwicklung | Feinabstimmung und Verbesserungen an Bedienung, Abläufen und mechanischem Aufbau auf Grundlage der Erfahrungen am eigenen Pool |
+| Öffentliche Dokumentation | Fotos, Funktionsbeschreibungen, CAD-Ansichten und eine vierseitige Leseprobe der Anleitung; Screenshots zeigen jeweils den Stand ihrer Aufnahme |
+
 ## Einblick in die Anleitung
 
 [**PDF-Leseprobe öffnen: erste vier Seiten der Anleitung 096-345**](dokumentation/Poolwerk_096-345_Anleitung_Leseprobe_Seiten_1-4.pdf)
@@ -325,5 +396,5 @@ Der Auszug enthält Titelseite, Inhaltsverzeichnis, aktuelle Anschlüsse und Ins
 
 ---
 
-Dies ist ein Ausschnitt aus dem Projekt. Die automatische Frischwassernachfüllung ist als Erweiterung vorbereitet. Das Repository dient der Vorstellung; Firmware und vollständige Projektquellen werden hier nicht bereitgestellt.
+Dies ist ein Ausschnitt aus dem Projekt. Das Repository dient der Vorstellung; Firmware und vollständige Projektquellen werden hier nicht bereitgestellt.
 
