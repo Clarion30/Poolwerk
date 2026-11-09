@@ -151,6 +151,12 @@ Die Messkreise für **pH, Redox, Leitfähigkeit und Chlor** sind galvanisch getr
 
 Bei der Chlormessung kommen ein **isolierter TRACO-DC/DC-Wandler**, eine separate Platine mit **ADS1115** und eine **ISO1640-I²C-Trennung auf einem Pololu-5392-Modul** zum Einsatz. Mit diesem Aufbau konnte ich den zuvor beobachteten unerwünschten Abfall der Chloranzeige bei Anlagenstillstand beheben.
 
+### Steuerung und Antriebe mit maximal 24 V
+
+**Die Steuerungs- und Antriebsebene meiner Anlage arbeitet mit maximal 24 V.** Die Belimo-Ventilantriebe, die Dosieranlage und der Umschalter für die Umpolung der Elektrolyse arbeiten mit 24 V. Die Elektronik verwendet entsprechend ihrer Module auch niedrigere Versorgungsspannungen.
+
+Verbraucher mit 230-V-Netzversorgung werden über **separate Schütze mit 24-V-Ansteuerung im Verteilerkasten** geschaltet. Poolwerk steuert dabei die 24-V-Spulen der Schütze an; deren Leistungskontakte schalten die Netzversorgung der jeweiligen Verbraucher. Die 24-V-Steuerung und die geschaltete Netzspannung sind damit klar voneinander zu unterscheiden.
+
 ### Antriebe, Bedienung und Kommunikation
 
 - **Belimo-Antriebe mit Endschaltern** übernehmen in meiner Anlage die Ventile. Poolwerk wertet die Rückmeldungen aus und überwacht, ob die angeforderte Stellung erreicht wird.
