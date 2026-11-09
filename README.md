@@ -19,6 +19,32 @@ Auch **ohne Belimo-Antriebe oder andere motorisierte Ventile** ist ein Betrieb m
 - **Weitere Pooltechnik:** Einbindung von Wärmepumpe, PV-Freigabe, Gegenstromanlage und Wassermeldern.
 - **Auswertung:** Messverläufe, Laufzeiten und Diagnose helfen dabei, den Betrieb und mögliche Störungen nachzuvollziehen.
 
+## Abläufe und Überwachung
+
+### Filterbetrieb und Wasserwege
+
+Für die Filterpumpe lassen sich Wochenprogramme mit bis zu 16 Zeitfenstern pro Wochentag einstellen. Weitere Drehzahlstufen sind optional: Eine Anlage mit nur einer angeschlossenen Stufe benötigt keine vollständige Dreistufen-Ansteuerung.
+
+Ein eingeschalteter Ausgang bedeutet noch nicht, dass tatsächlich Wasser fließt. Deshalb unterscheidet Poolwerk zwischen der Anforderung an die Pumpe und der Laufbestätigung durch den Hauptdurchfluss. Filterdruck und Messzellendurchfluss liefern zusätzliche Informationen zum Anlagenzustand.
+
+Bei motorisierten Ventilen werden die angeforderte Stellung und die vorhandenen Endschalter ausgewertet. Ohne Endlagenrückmeldung kann die eingestellte Fahrzeit verwendet werden; sie ist dann eine zeitbasierte Annahme und keine gemessene Stellung. Ohne elektrische Antriebe bleiben die betreffenden Ventilfunktionen deaktiviert. Damit passt das Konzept sowohl zu manuell eingestellten Wasserwegen als auch zu einer stärker automatisierten Anlage.
+
+Die Rückspülfunktion unterstützt den Ablauf, ersetzt in meinem Aufbau aber nicht das manuelle Umstellen des Filterkopfs. Nach dem Rückspülen wird der reguläre Filterbetrieb bewusst wieder gestartet.
+
+### Wasserpflege mit einstellbaren Grenzen
+
+Bei der automatischen Chlorsteuerung bestimmt der Redoxbedarf die Anforderung. Die separate Chlormessung liefert zusätzlich den gemessenen Chlorwert und begrenzt die Chlorzugabe. Je nach gewähltem Verfahren wird eine Flüssigchlor-Dosierpumpe oder die Salzelektrolyse angesteuert.
+
+Die pH-Minus-Regelung berücksichtigt die Abweichung vom Sollwert und die eingestellte Förderleistung. Dosierimpulse und Tagesmenge sind begrenzbar; auch bei einem Handlauf bleibt die pH-Sollwertfreigabe wirksam. pH-Plus ist als eigene, je nach Anlagenausstattung aktivierbare Funktion vorgesehen. Die einzelnen Verfahren müssen deshalb nicht alle gleichzeitig vorhanden sein.
+
+Bei der Elektrolyse wird zusätzlich der Zellstrom überwacht. Zur Umpolung gehören Abschaltpause und Reststromprüfung. Ein zeitlich begrenzter, bewusst bestätigter Elektrolyse-Handlauf kann die automatische Redox-/Chlorentscheidung übersteuern. Bei Flüssigchlor bleibt die Chlorgrenze dagegen auch im Handlauf wirksam.
+
+### Wärmepumpe und weitere Verbraucher
+
+Die Wärmepumpe lässt sich mit Filterpumpenabhängigkeit, Startwartezeit und PV-Freigabe einbinden. Während des Rückspülens bleibt sie ausgeschaltet. Auch Gegenstromanlage, Wasserstand und Wasseralarme haben eigene Bereiche in der Oberfläche.
+
+Der Umfang ergibt sich aus der tatsächlich angeschlossenen Technik: Poolwerk muss nicht mit allen Modulen ausgebaut werden, um an einer einfacheren Anlage sinnvoll eingesetzt zu werden.
+
 ## Hardware und technische Ausstattung
 
 ### ESP32-S3 als Zentrale
@@ -121,6 +147,43 @@ In meiner Anlage übernehmen Belimo-Antriebe die motorisierten Ventile. Angebaut
 
 </details>
 
+## Eigene Konstruktionen in Autodesk Fusion
+
+Zu Poolwerk gehört auch die mechanische Konstruktion. Die **Halterungen für die Belimo-Antriebe und die zugehörigen Adapterteile habe ich selbst in Autodesk Fusion gezeichnet** und an die vorhandenen Ventile angepasst. Die Bilder zeigen einzelne Konstruktionsteile; auf den Anlagenfotos ist der montierte Aufbau zu sehen.
+
+Die Halterungen positionieren den Antrieb am Ventil. Ergänzende Adapter und Betätigungsteile stellen die mechanische Verbindung her. Für die Mikroschalter gibt es auch einen **längeren Betätigungspin**. Diese Schalter liefern die Endlagenrückmeldung, die Poolwerk anschließend in der Steuerung auswertet.
+
+![Selbst konstruierte Belimo-Halterung in Autodesk Fusion](bilder/fusion-belimo-halterung.png)
+
+<details>
+<summary>Weitere Fusion-Ansichten: Platte, Adapter und Mikroschalter-Pin</summary>
+
+| Platte mit Befestigungsbohrungen | Geripptes Adapterteil |
+| --- | --- |
+| ![Konstruktionsansicht einer Befestigungsplatte](bilder/fusion-befestigungsplatte.png) | ![Geripptes Adapterteil aus der Fusion-Konstruktion](bilder/fusion-adapter.png) |
+
+| Weiteres Verbindungsteil | Längerer Betätigungspin für den Mikroschalter |
+| --- | --- |
+| ![Verbindungsteil in Autodesk Fusion](bilder/fusion-verbindungsteil.png) | ![Längerer Pin zur Betätigung des Mikroschalters](bilder/fusion-mikroschalter-pin-lang.png) |
+
+</details>
+
+Die CAD-Ansichten dokumentieren die eigene Entwicklung ergänzend zu Elektronik und Software. Sie zeigen die Konstruktion, ohne die vollständigen CAD-Projektdateien zu veröffentlichen.
+
+### Stopfen für die Messsonden
+
+Auch ein eigener Stopfen für die Messsonden gehört zu den Fusion-Konstruktionen. Die Ansicht zeigt das Gewinde und den gerändelten Griffbereich.
+
+<img src="bilder/fusion-messsonden-stopfen.png" alt="Selbst konstruierter Stopfen für die Messsonden mit Gewinde und gerändeltem Griff" width="650">
+
+### Gehäuse und Anordnung der Elektronik
+
+Auch für das Gehäuse gibt es eine eigene Grundzeichnung in Fusion. Sie zeigt die geplante Anordnung der Platinen, Relaismodule und weiteren Bauteile. Zusätzliche Halterungen und Erweiterungsteile werden nachträglich in das Gehäuse eingeklebt. Dadurch lässt sich der Aufbau während der Entwicklung ergänzen.
+
+![Fusion-Grundzeichnung des Gehäuses mit angeordneten Elektronikmodulen](bilder/fusion-gehaeuse-grundzeichnung.png)
+
+Die Zeichnung zeigt den konstruktiven Ausgangspunkt; die Fotos der offenen Steuerung dokumentieren den tatsächlich weiterentwickelten Prototyp.
+
 ## Die Steuerung als Prototyp
 
 Poolwerk ist ein **Prototyp im laufenden Aufbau**, der bereits an meinem Pool arbeitet. Die offene Ansicht zeigt den tatsächlichen Entwicklungsstand mit Steuerungsmodulen, Relais und Verdrahtung.
@@ -164,6 +227,24 @@ Die Systemansicht zeigt CPU-Auslastung, Temperatur, freien Speicher und Laufzeit
 
 </details>
 
+## Kalibrierung, Wartung und Fehlersuche
+
+Zur Bedienung gehören eigene Kalibrierbereiche für pH, Redox, Chlor und Leitfähigkeit. Messwerte, Sollwerte und reine Anzeigebereiche werden getrennt behandelt: Eine Änderung der grünen Anzeigegrenzen verändert nicht automatisch die Dosierfreigaben.
+
+Für die Fehlersuche lassen sich aktuelle Werte und Zustände im Portal ansehen sowie Diagnosedaten herunterladen. Der Mitschreiber ergänzt diese Momentaufnahme um einen zeitlichen Verlauf. So wird beispielsweise sichtbar, ob eine Veränderung mit einem Pumpenstart, einer Schaltung oder einer Messwertschwankung zusammenfällt.
+
+Die Konfiguration kann als Datei gesichert und wiederhergestellt werden. Zusätzlich sind Sicherungen auf der SD-Karte vorgesehen. Kalibrierwerte in den Atlas-Modulen werden separat gespeichert; eine Konfigurationssicherung ersetzt daher nicht jede gerätespezifische Einstellung.
+
+Die im Gerät hinterlegte PDF-Anleitung passt zur jeweiligen Firmware und lässt sich direkt aus dem ESP-Flash herunterladen. Dafür werden weder eine SD-Karte noch eine Internetverbindung benötigt, lediglich die Verbindung zur Steuerung.
+
+## Aus der Praxis entwickelt
+
+Poolwerk entsteht an meiner eigenen Anlage. Neben neuen Funktionen geht es dabei immer wieder um nachvollziehbare Messwerte, brauchbare Rückmeldungen und die Ursachen von Störungen.
+
+Ein Beispiel war die Chlormessung: Bei Anlagenstillstand fiel der angezeigte Wert unerwünscht ab. Die getrennte Versorgung und die separate, galvanisch isolierte Messplatine waren Teil der Lösung. Auch die rauscharme Versorgung der Atlas-Carrier über den LT3045 gehört zu diesem Augenmerk auf die Messhardware.
+
+Die Fotos zeigen deshalb bewusst auch die offene Steuerung. Sie dokumentieren einen arbeitenden Prototyp mit seinen tatsächlich verbauten Modulen und der gewachsenen Verdrahtung. Mechanik, Elektronik, Bedienoberfläche und Home-Assistant-Anbindung gehören für mich zu demselben Projekt.
+
 ## Messverläufe
 
 Der Live-Mitschreiber zeigt ungeglättete Messpunkte und ihre Spanne. So lässt sich beispielsweise verfolgen, wie stark der pH-Wert über einige Minuten schwankt.
@@ -179,3 +260,4 @@ Der Auszug enthält Titelseite, Inhaltsverzeichnis, aktuelle Anschlüsse und Ins
 ---
 
 Dies ist ein Ausschnitt aus dem Projekt. Die automatische Frischwassernachfüllung ist als Erweiterung vorbereitet. Das Repository dient der Vorstellung; Firmware und vollständige Projektquellen werden hier nicht bereitgestellt.
+
