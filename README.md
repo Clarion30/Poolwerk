@@ -1,4 +1,4 @@
-# Poolwerk
+# Poolwerk – die Steuerung
 
 ![Poolwerk-Logo](bilder/poolwerk-logo.png)
 
