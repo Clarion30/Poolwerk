@@ -169,7 +169,11 @@ Die Leitfähigkeitssonde besitzt keinen eigenen Temperaturfühler. Für die Temp
 
 Vier **MCP23017** erweitern den ESP32 um insgesamt **64 digitale Ein-/Ausgänge**. Im Aufbau sind davon **24 Relaiskanäle** und **16 Endschaltereingänge** vorgesehen. Weitere Anschlüsse dienen unter anderem dem Encoder-Taster, Wasserstandssensoren, Wasseralarmen, Optokopplern und zusätzlichen Steuereingängen; ein Teil bleibt als Reserve.
 
-**Erweiterbar auf fünf MCP23017 und acht zusätzliche Relais:** Mit einem fünften MCP23017 lässt sich die digitale Ausstattung von 64 auf **80 Ein-/Ausgänge** erweitern. Zusätzlich sind **acht weitere Relaiskanäle** möglich, sodass der Ausbau insgesamt **32 Relaiskanäle** umfasst. Diese Angaben beschreiben die Erweiterungsmöglichkeit; der oben beschriebene Aufbau verwendet vier MCP23017 und 24 Relaiskanäle.
+**Im Gehäuse sind Plätze für fünf MCP23017 und vier 8-Kanal-Relaisplatinen vorgesehen.** Damit bietet der vorgesehene Gehäuseausbau Platz für **80 digitale Ein-/Ausgänge und 32 Relaiskanäle**. Die Relaiskanäle nutzen einen Teil dieser Ein-/Ausgänge; sie kommen nicht zusätzlich zu den 80 Anschlüssen hinzu. Der oben beschriebene Aufbau verwendet derzeit vier MCP23017 und 24 Relaiskanäle.
+
+**Die Erweiterung ist nicht auf dieses Gehäuse beschränkt.** Weitere MCP-Module und Relaisplatinen können in einem zusätzlichen Gehäuse untergebracht werden. Vier Relaisplatinen sind damit die vorgesehene Bestückung dieses Gehäuses, keine grundsätzliche Grenze des Erweiterungskonzepts. Zusätzliche Relais benötigen entsprechend weitere verfügbare Steuerausgänge sowie eine passende Stromversorgung und Firmwarekonfiguration.
+
+Pro I²C-Bussegment sind bis zu **acht MCP23017 mit unterschiedlichen Adressen** möglich. Für darüber hinausgehende Erweiterungen ist eine angepasste Busarchitektur erforderlich, beispielsweise mit weiteren Bussen oder einem geeigneten Multiplexer. Auch bei einem zusätzlichen Gehäuse müssen Leitungslängen, Busbelastung und Kanalzuordnung berücksichtigt werden. Solche Ausbaustufen sind als Erweiterungsmöglichkeit zu verstehen, nicht als bereits vollständig eingerichtete oder getestete Ausstattung.
 
 Zwei **ADS1115-Messmodule** erfassen die analogen Signale. Ein Modul verarbeitet unter anderem Filterdruck, Elektrolysestrom, Batteriespannung der Echtzeituhr und das Bypass-Signal. Das zweite ist der galvanisch getrennten Chlormessung zugeordnet. Die Anzahl der vorgesehenen Kanäle bedeutet dabei nicht, dass jede angeschlossene Anlage alle Funktionen benötigt.
 
