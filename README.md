@@ -169,6 +169,8 @@ Die Leitfähigkeitssonde besitzt keinen eigenen Temperaturfühler. Für die Temp
 
 Vier **MCP23017** erweitern den ESP32 um insgesamt **64 digitale Ein-/Ausgänge**. Im Aufbau sind davon **24 Relaiskanäle** und **16 Endschaltereingänge** vorgesehen. Weitere Anschlüsse dienen unter anderem dem Encoder-Taster, Wasserstandssensoren, Wasseralarmen, Optokopplern und zusätzlichen Steuereingängen; ein Teil bleibt als Reserve.
 
+**Erweiterbar auf fünf MCP23017 und acht zusätzliche Relais:** Mit einem fünften MCP23017 lässt sich die digitale Ausstattung von 64 auf **80 Ein-/Ausgänge** erweitern. Zusätzlich sind **acht weitere Relaiskanäle** möglich, sodass der Ausbau insgesamt **32 Relaiskanäle** umfasst. Diese Angaben beschreiben die Erweiterungsmöglichkeit; der oben beschriebene Aufbau verwendet vier MCP23017 und 24 Relaiskanäle.
+
 Zwei **ADS1115-Messmodule** erfassen die analogen Signale. Ein Modul verarbeitet unter anderem Filterdruck, Elektrolysestrom, Batteriespannung der Echtzeituhr und das Bypass-Signal. Das zweite ist der galvanisch getrennten Chlormessung zugeordnet. Die Anzahl der vorgesehenen Kanäle bedeutet dabei nicht, dass jede angeschlossene Anlage alle Funktionen benötigt.
 
 ### Rauscharme Versorgung und galvanische Trennung
