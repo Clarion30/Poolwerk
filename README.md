@@ -416,7 +416,9 @@ Der Live-Mitschreiber zeigt ungeglättete Messpunkte und ihre Spanne. So lässt 
 
 ## Entwicklungsstand
 
-**Stand: 9. November 2026.** Poolwerk arbeitet an meiner eigenen Poolanlage und wird im laufenden Projekt weiterentwickelt.
+**Stand: 11. November 2026.** Poolwerk wird derzeit an meiner eigenen Poolanlage eingesetzt und weiterentwickelt.
+
+Für die Zukunft ist geplant, die Steuerung in einem kleinen Kreis auch an weiteren Poolanlagen einzusetzen. Dabei sollen Erfahrungen mit unterschiedlichen Ausstattungen gesammelt werden und in die Weiterentwicklung einfließen.
 
 | Stand | Einordnung |
 | --- | --- |
