@@ -193,7 +193,7 @@ Verbraucher mit 230-V-Netzversorgung werden über **separate Schütze mit 24-V-A
 
 ### Umgebaute 24-V-Dosierpumpe
 
-Für die Dosierung verwende ich eine umgebaute **SEKO-Schlauchpumpe mit 24-V-Antrieb**. Das Gehäuse wurde dafür selbst gedruckt und angepasst. Zum Aufbau gehören ein **SEKO-Drehkreuz** und ein **SEKO-Santoprene-Pumpenschlauch mit den Abmessungen 6,25 × 10,65 mm**.
+Als Grundlage dient ein **SEKO PP Dosiergerät für die Spülmaschine Meiko FV28GIO**, das ich für meine Poolanlage umgebaut habe. Die umgebaute Schlauchpumpe arbeitet mit **24 V**. Das Gehäuse wurde dafür selbst gedruckt und angepasst. Zum Aufbau gehören ein **SEKO-Drehkreuz** und ein **SEKO-Santoprene-Pumpenschlauch mit den Abmessungen 6,25 × 10,65 mm**.
 
 Die Pumpe wurde **ausgelitert**: Die tatsächlich geförderte Menge wurde über eine definierte Laufzeit gemessen, um die Förderleistung für die Dosierung zu bestimmen. Damit orientiert sich die Einstellung am umgebauten Pumpenaufbau.
 
