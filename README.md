@@ -191,6 +191,14 @@ Bei der Chlormessung kommen ein **isolierter TRACO-DC/DC-Wandler**, eine separat
 
 Verbraucher mit 230-V-Netzversorgung werden über **separate Schütze mit 24-V-Ansteuerung im Verteilerkasten** geschaltet. Poolwerk steuert dabei die 24-V-Spulen der Schütze an; deren Leistungskontakte schalten die Netzversorgung der jeweiligen Verbraucher. Die 24-V-Steuerung und die geschaltete Netzspannung sind damit klar voneinander zu unterscheiden.
 
+### Umgebaute 24-V-Dosierpumpe
+
+Für die Dosierung verwende ich eine umgebaute **SEKO-Schlauchpumpe mit 24-V-Antrieb**. Das Gehäuse wurde dafür selbst gedruckt und angepasst. Zum Aufbau gehören ein **SEKO-Drehkreuz** und ein **SEKO-Santoprene-Pumpenschlauch mit den Abmessungen 6,25 × 10,65 mm**.
+
+Die Pumpe wurde **ausgelitert**: Die tatsächlich geförderte Menge wurde über eine definierte Laufzeit gemessen, um die Förderleistung für die Dosierung zu bestimmen. Damit orientiert sich die Einstellung am umgebauten Pumpenaufbau.
+
+Eine **Freilaufdiode am Gleichstrommotor** begrenzt die induktive Spannungsspitze beim Abschalten und schützt damit die ansteuernde Schaltstufe.
+
 ### Antriebe, Bedienung und Kommunikation
 
 - **Belimo-Antriebe mit Endschaltern** übernehmen in meiner Anlage die Ventile. Poolwerk wertet die Rückmeldungen aus und überwacht, ob die angeforderte Stellung erreicht wird.
