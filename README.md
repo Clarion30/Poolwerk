@@ -428,7 +428,7 @@ Der Live-Mitschreiber zeigt ungeglättete Messpunkte und ihre Spanne. So lässt 
 
 ## Einblick in die Anleitung
 
-[**PDF-Leseprobe öffnen: erste vier Seiten der Anleitung 096-345**](dokumentation/Poolwerk_096-345_Anleitung_Leseprobe_Seiten_1-4.pdf)
+[**PDF-Leseprobe öffnen: erste vier Seiten der Anleitung 096-351**](dokumentation/Poolwerk_096-351_Anleitung_Leseprobe_Seiten_1-4.pdf)
 
 Der Auszug enthält Titelseite, Inhaltsverzeichnis, aktuelle Anschlüsse und Installation. Das Inhaltsverzeichnis bezieht sich auf die vollständige Anleitung. Auf der Steuerung liegt die passende vollständige Ausgabe unter **Einstellungen → System → Anleitung herunterladen (PDF)**.
 
