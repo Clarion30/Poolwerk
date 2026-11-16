@@ -64,6 +64,7 @@ Die Ausstattung lässt sich an die jeweilige Anlage anpassen. Auch ein Betrieb o
 - [Automatische Frischwassernachfüllung](#automatische-frischwassernachfüllung)
 - [Wasseralarm und Pumpe im Keller](#wasseralarm-und-pumpe-im-keller)
 - [Eigene Konstruktionen in Autodesk Fusion](#eigene-konstruktionen-in-autodesk-fusion)
+- [Poolwerk V2.0 – in Vorbereitung](#poolwerk-v20--in-vorbereitung)
 - [Die Steuerung als Prototyp](#die-steuerung-als-prototyp)
 - [Einstellungen und Diagnose](#einstellungen-und-diagnose)
 - [Kalibrierung, Wartung und Fehlersuche](#kalibrierung-wartung-und-fehlersuche)
@@ -354,6 +355,14 @@ Die Zeichnung zeigt den konstruktiven Ausgangspunkt; die Fotos der offenen Steue
 Die Gehäusefront habe ich ebenfalls in Fusion gestaltet. Die Zeichnung zeigt die beiden Displayausschnitte, das Poolwerk-Logo sowie die Sonne und das Wellenmotiv mit der Öffnung für den Drehencoder. So gehört auch die Gestaltung der Bedienfront zur eigenen Konstruktion.
 
 ![Fusion-Ansicht der Poolwerk-Gehäusefront mit zwei Displayausschnitten, Logo, Sonne und Wellenmotiv](bilder/fusion-gehaeusefront.png)
+
+## Poolwerk V2.0 – in Vorbereitung
+
+Für die nächste Hardwaregeneration ist eine **eigene, an das Gehäuse angepasste Trägerplatine** in Vorbereitung. Sie führt die Steuerungs- und Erweiterungsmodule zusammen und soll die bisherige Einzelverdrahtung deutlich reduzieren. Festgelegte Steckplätze und beschriftete Anschlüsse sollen Aufbau, Wartung und den Austausch einzelner Module erleichtern.
+
+![Poolwerk V2.0 in Vorbereitung – Fusion-Ansicht der Trägerplatine mit Modulen im Gehäuse](bilder/poolwerk-v2-traegerplatine-vorbereitung.png)
+
+Die Fusion-Ansicht zeigt den geplanten Aufbau. Die Trägerplatine ist noch in Vorbereitung; der bisherige Prototyp bleibt als Ausgangspunkt der Entwicklung dokumentiert.
 
 ## Die Steuerung als Prototyp
 
