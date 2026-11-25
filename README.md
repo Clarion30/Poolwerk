@@ -8,7 +8,7 @@ Meine komplette Pooltechnik steht im Keller. Dass mir bei einem Defekt das Poolw
 
 Die Ventilstellungen wollte ich über Endschalter zurückbekommen. Nur weil der Antrieb angesteuert wird, weiß ich ja noch nicht, ob das Ventil auch wirklich offen oder geschlossen ist.
 
-Hier sind ein paar Bilder und die technischen Angaben zu meinem Aufbau. An der Steuerung wird weiterhin gearbeitet, sie ist aber schon am Pool in Betrieb.
+Die Steuerung läuft schon am Pool, fertig bin ich mit dem Projekt aber noch nicht. Weiter unten gibt es Fotos vom Aufbau und die technischen Angaben.
 
 ## Steuerung und Home Assistant
 
@@ -22,7 +22,7 @@ Die Verarbeitung findet vor Ort statt. Konkrete Reaktionszeiten habe ich bisher 
 
 ## Funktionen
 
-Man muss nicht gleich alles verbauen. Es geht auch erst einmal nur mit der Filterpumpe. Diese Funktionen sind vorgesehen bzw. je nach Ausstattung nutzbar:
+Man kann erst einmal mit der Filterpumpe anfangen und später erweitern. Je nach angeschlossener Technik kann Poolwerk Folgendes übernehmen:
 
 - Filterpumpe mit Wochenprogramm und optionalen Drehzahlstufen
 - Ventile mit Belimo-Antrieben und Endlagenrückmeldung
@@ -75,7 +75,7 @@ Bei Wasser im Keller schaltet der Sensor die zusätzliche Pumpe ein und später 
 
 Für die automatische Chlorzugabe wird der Redoxbedarf ausgewertet. Die separate Chlormessung begrenzt zusätzlich die Zugabe. Je nach Ausstattung steuert Poolwerk dafür eine Flüssigchlorpumpe oder eine Elektrolyse an. Bei mir arbeitet eine Zodiac LM2-40 mit Stromüberwachung und automatischer Umpolung.
 
-Bei pH-Minus werden Sollwert, Förderleistung, Dosierpausen und Mengenbegrenzungen berücksichtigt. pH-Plus lässt sich als eigene Funktion aktivieren. Nicht jede Anlage muss dafür alle Pumpen und Messmodule haben.
+Für pH-Minus stelle ich Sollwert, Förderleistung, Dosierpausen und Mengengrenzen ein. pH-Plus kann man bei Bedarf dazunehmen.
 
 Auch bei Handfunktionen bleiben die jeweiligen Freigaben wichtig: pH-Minus stoppt am Sollwert, bei Flüssigchlor bleibt die Chlorgrenze wirksam. Für die Elektrolyse gibt es einen bewusst bestätigten, zeitlich begrenzten Handlauf, der die automatische Redox-/Chlorentscheidung übersteuern kann.
 
@@ -106,7 +106,7 @@ Diese Module und Sensoren gehören zu meinem Aufbau:
 | DS3231 und microSD | Echtzeituhr und lokale Aufzeichnung |
 | Zwei TFT-Displays und EC11-Drehencoder | Bedienung am Gerät |
 
-Für die Salzberechnung wird die zugeordnete Messzellentemperatur verwendet. Die Kalibrierung der Messmodule erfolgt über die Bedienoberfläche.
+Die Temperatur für die Salzberechnung kommt vom Fühler an der Messzelle. Kalibriert werden die Messmodule über die Bedienoberfläche.
 
 Im gezeigten bisherigen Aufbau sind vier MCP23017 mit 64 digitalen Ein- und Ausgängen und 24 Relaiskanäle vorgesehen. Das Gehäuse bietet Platz für fünf MCP23017 und vier 8-Kanal-Relaisplatinen: also 80 I/Os und 32 Relais. Die Relais belegen dabei einen Teil dieser I/Os.
 
@@ -116,7 +116,7 @@ Weitere Module können in ein zusätzliches Gehäuse wandern. Grenzen setzen die
 
 Die Atlas-Carrier werden über einen rauscharmen LT3045 versorgt. Die Messkreise für pH, Redox, Leitfähigkeit und Chlor sind galvanisch getrennt aufgebaut.
 
-Bei der Chlormessung hatte ich anfangs das Problem, dass die Anzeige bei stillstehender Anlage abfiel. Dafür habe ich jetzt einen isolierten TRACO-Wandler, einen separaten ADS1115 und die ISO1640-I²C-Trennung auf einem Pololu-5392-Modul verbaut. Seit dem getrennten Aufbau war dieses Problem bei mir behoben.
+Bei der Chlormessung hatte ich anfangs das Problem, dass die Anzeige bei stillstehender Anlage abfiel. Dafür habe ich jetzt einen isolierten TRACO-Wandler, einen separaten ADS1115 und die ISO1640-I²C-Trennung auf einem Pololu-5392-Modul verbaut. Mit dem getrennten Aufbau ist das bei mir nicht mehr aufgetreten.
 
 ### Antriebe mit 24 V
 
@@ -141,7 +141,7 @@ Die Pumpe ist ausgelitert, die Fördermenge also am fertigen Aufbau gemessen. Am
 
 ## Bedienung und Messverläufe
 
-Am Gerät lassen sich die Werte auf zwei Displays ablesen und die Menüs mit dem Drehknopf bedienen. Im Webportal sind Einstellungen, Messwerte und Diagnose nach Anlagenbereichen sortiert. Dort kann ich auch kalibrieren, Störungen ansehen und die Konfiguration sichern.
+Direkt am Gehäuse bediene ich die Menüs mit dem Drehknopf und lese die Werte auf den beiden Displays ab. Im Webportal finde ich die Einstellungen für Pumpe, Wasserpflege und die anderen Bereiche. Kalibrieren und Einstellungen sichern geht dort ebenfalls.
 
 <img src="bilder/gehaeusefront-aktuell.jpg" alt="Poolwerk mit zwei Displays und Drehknopf" width="650">
 
@@ -253,7 +253,7 @@ Die Verkabelung ist noch etwas wild, das sieht man auf dem Foto. Ich habe beim A
 
 </details>
 
-Für V2.0 ist eine Trägerplatine passend zum Gehäuse in Vorbereitung. Darauf bekommen die Module und Anschlüsse ihren festen Platz. Damit soll ein großer Teil der einzelnen Kabel wegfallen.
+Für V2.0 bereite ich eine Trägerplatine vor, die ins Gehäuse passt. Die Module werden darauf gesteckt, damit ich weniger einzeln verkabeln muss.
 
 ![Poolwerk V2.0 – Trägerplatine in Vorbereitung](bilder/poolwerk-v2-traegerplatine-vorbereitung.png)
 
@@ -261,7 +261,7 @@ Das Bild oben zeigt die Planung in Fusion.
 
 ## Projektstand und Anleitung
 
-Bisher läuft Poolwerk an meinem eigenen Pool. Geplant ist, die Steuerung später in einem kleinen Kreis an weiteren Pools zu nutzen.
+Bisher läuft Poolwerk an meinem eigenen Pool. Später sollen im kleinen Kreis noch weitere Pools dazukommen.
 
 Auf GitHub zeige ich erst einmal den Aufbau und die Funktionen. Die Firmware und die vollständigen CAD-Dateien sind hier nicht enthalten. Manche Fotos und Screenshots stammen noch aus älteren Entwicklungsständen.
 
