@@ -2,33 +2,27 @@
 
 ![Poolwerk-Logo](bilder/poolwerk-logo.png)
 
-Poolwerk ist meine selbst gebaute Poolsteuerung. Angefangen hat das Ganze mit dem Wunsch nach mehr Eingängen und mehr Möglichkeiten für meine Anlage. Inzwischen gehören Elektronik, Software, Webportal und eine ganze Reihe selbst gezeichneter und gedruckter Teile dazu.
+Ich möchte euch hier meine Poolsteuerung vorstellen. Poolwerk läuft bei mir zu Hause und ist entstanden, weil mir bei meiner bisherigen ProCon.IP die Analogregeln und Eingänge nicht mehr gereicht haben. Ich brauchte vor allem mehr Anschlüsse für die Belimos und deren Endschalter.
 
-Die Steuerung läuft an meinem eigenen Pool und wächst mit den Erfahrungen im Alltag. Hier zeige ich, was daraus geworden ist – vom Technikraum bis zur nächsten Platine.
+Meine komplette Pooltechnik steht im Keller. Dass mir bei einem Defekt das Poolwasser in den Keller läuft, ist dabei meine größte Sorge. Deshalb gehören Wassersensoren, das Schließen der Ventile und eine zusätzliche Pumpe von Anfang an dazu.
 
-## Warum ich Poolwerk gebaut habe
+Die Ventilstellungen wollte ich über Endschalter zurückbekommen. Nur weil der Antrieb angesteuert wird, weiß ich ja noch nicht, ob das Ventil auch wirklich offen oder geschlossen ist.
 
-Meine Pooltechnik steht im Keller. Der Gedanke, dass sich bei einem Defekt der Pool dort hinein entleeren könnte, hat mir keine Ruhe gelassen. Ich wollte austretendes Wasser erkennen, die Wasserwege schließen lassen und eine zusätzliche Pumpe einschalten.
+Hier sind ein paar Bilder und die technischen Angaben zu meinem Aufbau. An der Steuerung wird weiterhin gearbeitet, sie ist aber schon am Pool in Betrieb.
 
-Dazu kamen immer mehr Belimo-Antriebe und Endschalter. Bei meiner bisherigen ProCon.IP reichten mir dafür die Analogregeln und Eingänge nicht mehr. Das war der Anlass, eine eigene Steuerung aufzubauen.
+## Steuerung und Home Assistant
 
-Gerade die Endschalter waren mir wichtig: Wenn ich einem Ventil „ZU“ sage, möchte ich auch wissen, ob es wirklich zugefahren ist. Ein eingeschaltetes Relais allein sagt darüber noch nichts aus.
+Poolwerk läuft eigenständig auf einem ESP32-S3. Die Software nutzt ESPHome mit ESP-IDF, die Poolregelung und die Abläufe laufen direkt auf dem Chip. Wenn Home Assistant ausfällt oder ausgeschaltet wird, arbeitet die Steuerung weiter.
 
-## Läuft auch ohne Home Assistant
+Ich kann alles über das Webportal im eigenen Netzwerk oder an den beiden Displays mit Drehknopf bedienen. Internet wird dafür nicht gebraucht. Home Assistant nutze ich zusätzlich für die Anzeige und Bedienung im Haus. Nur Funktionen, die von außen kommen, etwa eine externe PV-Freigabe, brauchen auch diese Verbindung.
 
-**Poolwerk steuert den Pool selbst.** Messwerte, Regelungen, Zeitprogramme und Ventilabläufe werden direkt auf dem ESP32-S3 verarbeitet. Home Assistant kann ausgeschaltet sein oder neu starten – die lokale Steuerung läuft weiter.
-
-Die Firmware basiert auf ESPHome mit ESP-IDF und der eigenen Poolwerk-Logik. ESPHome ist dabei die technische Grundlage; Home Assistant übernimmt nicht die Regelung.
-
-Bedient wird Poolwerk über das eigene Webportal im lokalen Netzwerk oder direkt am Gehäuse mit zwei Displays und Drehknopf. Internet oder eine Cloud braucht es dafür nicht. Home Assistant nutze ich zusätzlich für mein Dashboard und die Einbindung ins Haus. Externe Vorgaben wie eine PV-Freigabe brauchen natürlich ihre jeweilige Verbindung.
-
-Auch Schaltentscheidungen fallen direkt im Gerät, ohne auf einen Server zu warten. Eine feste Reaktionszeit für die gesamte Anlage habe ich bisher nicht gemessen. Sensorintervalle, Dosierpausen und Ventilfahrzeiten spielen dabei jeweils ihre eigene Rolle.
+Die Verarbeitung findet vor Ort statt. Konkrete Reaktionszeiten habe ich bisher nicht gemessen.
 
 ![Poolwerk-Webportal](bilder/webportal.png)
 
-## Was alles dazugehört
+## Funktionen
 
-Poolwerk lässt sich passend zur vorhandenen Technik einrichten. Man kann mit der Filterpumpe anfangen und später weitere Funktionen dazunehmen:
+Man muss nicht gleich alles verbauen. Es geht auch erst einmal nur mit der Filterpumpe. Diese Funktionen sind vorgesehen bzw. je nach Ausstattung nutzbar:
 
 - Filterpumpe mit Wochenprogramm und optionalen Drehzahlstufen
 - Ventile mit Belimo-Antrieben und Endlagenrückmeldung
@@ -39,17 +33,17 @@ Poolwerk lässt sich passend zur vorhandenen Technik einrichten. Man kann mit de
 - Wasserstand, automatische Frischwassernachfüllung und Wasseralarm
 - Messverläufe, Diagnose, Kalibrierung und Sicherung der Einstellungen
 
-Die einzelnen Funktionen lassen sich ein- und ausschalten. Auch ohne Belimos funktioniert Poolwerk: Bei manuell eingestellten Wasserwegen bleiben die entsprechenden Ventilfunktionen einfach deaktiviert.
+Was nicht vorhanden ist, lässt sich in den Einstellungen abschalten. Poolwerk läuft also auch ohne Belimos, mit von Hand eingestellten Ventilen. Flüssigchlor, Elektrolyse, pH-Minus und pH-Plus werden passend zur Anlage eingerichtet.
 
-## Wasserwege und Kellerüberwachung
+## Filterpumpe, Ventile und Wasseralarm
 
 Die Filterpumpe hat ein Wochenprogramm mit bis zu 16 Zeitfenstern pro Tag. Weitere Pumpenstufen sind optional. Ob tatsächlich Wasser fließt, wird über den Hauptdurchfluss geprüft; Filterdruck und Messzellendurchfluss ergänzen die Überwachung.
 
 Bei meinen Ventilen melden Endschalter die offene und geschlossene Stellung zurück. Ohne Endschalter kann Poolwerk mit einer eingestellten Fahrzeit arbeiten. Dann wird die Stellung allerdings nur angenommen. Die Rückspülfunktion unterstützt den Ablauf; den Filterkopf stelle ich in meinem Aufbau weiterhin von Hand um.
 
-Die automatische Frischwassernachfüllung ist bereits in Betrieb. Wasserstand, Nachfüllung und die zugehörigen Einstellungen sind im Webportal zusammengefasst.
+Die Frischwassernachfüllung läuft bei mir inzwischen ebenfalls. Eingestellt wird sie im Webportal unter „Wasserstand und Frischwasser“.
 
-Erkennt der Wassersensor im Keller Wasser, wird die zusätzliche Pumpe eingeschaltet und später wieder ausgeschaltet. Gleichzeitig fordert Poolwerk die dafür eingerichteten Ventile zum Schließen auf. Die Endschalter melden zurück, ob die geschlossene Stellung erreicht wurde. Damit möchte ich einen möglichen Wasserschaden möglichst früh begrenzen.
+Bei Wasser im Keller schaltet der Sensor die zusätzliche Pumpe ein und später wieder aus. Poolwerk lässt gleichzeitig die dafür eingerichteten Ventile zufahren und prüft die Endschalter. Das ist mir bei der Anlage im Keller besonders wichtig.
 
 ![Pooltechnik mit Ventilen und Messzelle](bilder/technikraum-uebersicht.jpg)
 
@@ -85,7 +79,7 @@ Bei pH-Minus werden Sollwert, Förderleistung, Dosierpausen und Mengenbegrenzung
 
 Auch bei Handfunktionen bleiben die jeweiligen Freigaben wichtig: pH-Minus stoppt am Sollwert, bei Flüssigchlor bleibt die Chlorgrenze wirksam. Für die Elektrolyse gibt es einen bewusst bestätigten, zeitlich begrenzten Handlauf, der die automatische Redox-/Chlorentscheidung übersteuern kann.
 
-## Was im Gehäuse steckt
+## Hardware
 
 Als Zentrale verwende ich einen ESP32-S3. Die Firmware unterstützt zwei Boardprofile:
 
@@ -94,7 +88,7 @@ Als Zentrale verwende ich einen ESP32-S3. Die Firmware unterstützt zwei Boardpr
 | ESP32-S3 N32R16V | 32 MB | 16 MB |
 | ESP32-S3 N16R8 | 16 MB | 8 MB |
 
-Dazu kommen die Module für Messung, Ein- und Ausgänge und die Bedienung:
+Diese Module und Sensoren gehören zu meinem Aufbau:
 
 | Bauteil | Wofür ich es verwende |
 | --- | --- |
@@ -118,11 +112,11 @@ Im gezeigten bisherigen Aufbau sind vier MCP23017 mit 64 digitalen Ein- und Ausg
 
 Weitere Module können in ein zusätzliches Gehäuse wandern. Grenzen setzen die verfügbaren Adressen, der Bus, die Versorgung und die Firmware. Pro I²C-Bussegment sind bis zu acht MCP23017 möglich; darüber hinaus müsste der Busaufbau erweitert werden.
 
-### Viel Arbeit steckt in der Messversorgung
+### Versorgung der Messmodule
 
 Die Atlas-Carrier werden über einen rauscharmen LT3045 versorgt. Die Messkreise für pH, Redox, Leitfähigkeit und Chlor sind galvanisch getrennt aufgebaut.
 
-Für die Chlormessung verwende ich einen isolierten TRACO-Wandler, einen separaten ADS1115 und eine ISO1640-I²C-Trennung auf einem Pololu-5392-Modul. Das war eine der Stellen, an denen einiges an Fehlersuche nötig war: Bei Anlagenstillstand fiel der Chlorwert vorher unerwünscht ab. Mit der getrennten Versorgung und Messplatine konnte ich dieses Verhalten beheben.
+Bei der Chlormessung hatte ich anfangs das Problem, dass die Anzeige bei stillstehender Anlage abfiel. Dafür habe ich jetzt einen isolierten TRACO-Wandler, einen separaten ADS1115 und die ISO1640-I²C-Trennung auf einem Pololu-5392-Modul verbaut. Seit dem getrennten Aufbau war dieses Problem bei mir behoben.
 
 ### Antriebe mit 24 V
 
@@ -139,11 +133,11 @@ Bei der externen Drehzahlsteuerung der Filterpumpe kommt außerdem ein PhotoMOS 
 
 </details>
 
-### Meine umgebaute Dosierpumpe
+### Dosierpumpe
 
-Als Basis dient ein SEKO PP Dosiergerät für die Spülmaschine Meiko FV28GIO. Ich habe es auf meinen Aufbau angepasst, das Gehäuse gedruckt und die Pumpe mit 24 V aufgebaut. Verwendet werden ein SEKO-Drehkreuz und ein Santoprene-Schlauch mit 6,25 × 10,65 mm.
+Die Dosierpumpe habe ich aus einem SEKO PP Dosiergerät für die Spülmaschine Meiko FV28GIO umgebaut. Sie läuft mit 24 V und hat ein gedrucktes Gehäuse, ein SEKO-Drehkreuz und einen Santoprene-Schlauch in 6,25 × 10,65 mm.
 
-Die Fördermenge habe ich ausgelitert, damit die Dosierung zur tatsächlichen Pumpe passt. Eine Freilaufdiode am Gleichstrommotor begrenzt die Spannungsspitze beim Abschalten. Ein Foto der fertigen Pumpe folgt noch.
+Die Pumpe ist ausgelitert, die Fördermenge also am fertigen Aufbau gemessen. Am Motor sitzt eine Freilaufdiode gegen die Spannungsspitze beim Abschalten. Das Foto der fertigen Pumpe reiche ich noch nach.
 
 ## Bedienung und Messverläufe
 
@@ -186,11 +180,11 @@ Die Systemansicht zeigt CPU-Auslastung, Temperatur, freien Speicher und Laufzeit
 
 </details>
 
-Der Live-Mitschreiber hilft mir bei der Fehlersuche. Er zeigt die Messpunkte und ihre Schwankungen, sodass sich zum Beispiel Veränderungen beim Pumpenstart nachvollziehen lassen.
+Im Mitschreiber schaue ich mir die Messwerte über die Zeit an, zum Beispiel wenn sich beim Einschalten einer Pumpe etwas verändert. Hier ist ein pH-Verlauf ohne Glättung:
 
 ![Ungeglätteter pH-Verlauf](bilder/ph-verlauf.png)
 
-Home Assistant nutze ich zusätzlich als Übersicht im Haus. Die eigentliche Poolsteuerung bleibt im Poolwerk-Gerät.
+So sieht die zusätzliche Anzeige bei mir in Home Assistant aus:
 
 <details>
 <summary>Mein Home-Assistant-Dashboard</summary>
@@ -216,7 +210,7 @@ Beim aktiven Chlor wird aus DPD1, Cyanursäure und pH ein Modellwert bei 25 °C 
 
 ## Konstruktionen aus Fusion
 
-Die Belimo-Halterungen, Adapter und Betätigungsteile für die Endschalter habe ich in Fusion gezeichnet und an meine Ventile angepasst. Dazu gehören auch ein längerer Mikroschalter-Pin, Stopfen für die Messsonden und die Gestaltung des Gehäuses.
+Hier sind die Fusion-Zeichnungen der Belimo-Halterungen und Adapter für meine Ventile. Auch die Teile für die Endschalter, der längere Mikroschalter-Pin, die Sondenstopfen und das Gehäuse gehören dazu.
 
 ![Belimo-Halterung in Fusion](bilder/fusion-belimo-halterung.png)
 
@@ -246,9 +240,9 @@ Die Grundzeichnung zeigt die Anordnung der Elektronik. Zusätzliche Halterungen 
 
 </details>
 
-## Vom Prototyp zur eigenen Platine
+## Aufbau und Trägerplatine
 
-Die Verkabelung im Prototyp ist noch etwas wild. Da wurde ergänzt, umgebaut und ausprobiert – genau das zeigen die Fotos auch.
+Die Verkabelung ist noch etwas wild, das sieht man auf dem Foto. Ich habe beim Aufbau immer wieder etwas ergänzt und umgebaut.
 
 ![Offene Steuerung mit Modulen und Verdrahtung](bilder/steuerung-prototyp-offen.jpg)
 
@@ -259,17 +253,17 @@ Die Verkabelung im Prototyp ist noch etwas wild. Da wurde ergänzt, umgebaut und
 
 </details>
 
-Für Poolwerk V2.0 ist eine eigene Trägerplatine in Vorbereitung. Sie passt ins Gehäuse und soll die Module, Anschlüsse und Versorgung übersichtlicher zusammenbringen. Damit wird auch der Aufbau mit deutlich weniger Einzelverdrahtung möglich.
+Für V2.0 ist eine Trägerplatine passend zum Gehäuse in Vorbereitung. Darauf bekommen die Module und Anschlüsse ihren festen Platz. Damit soll ein großer Teil der einzelnen Kabel wegfallen.
 
 ![Poolwerk V2.0 – Trägerplatine in Vorbereitung](bilder/poolwerk-v2-traegerplatine-vorbereitung.png)
 
-Die Fusion-Ansicht zeigt den geplanten Aufbau. Die Platine ist der nächste Schritt in der Weiterentwicklung.
+Das Bild oben zeigt die Planung in Fusion.
 
-## Wie es weitergeht
+## Projektstand und Anleitung
 
-Poolwerk läuft an meinem eigenen Pool. Neue Funktionen und Verbesserungen entstehen aus dem, was mir dort im Betrieb auffällt. Später möchte ich die Steuerung in einem kleinen Kreis auch an weiteren Pools einsetzen und Erfahrungen mit anderen Anlagen sammeln.
+Bisher läuft Poolwerk an meinem eigenen Pool. Geplant ist, die Steuerung später in einem kleinen Kreis an weiteren Pools zu nutzen.
 
-Hier gibt es Bilder, Einblicke in den Aufbau und eine kleine Leseprobe. Firmware und vollständige CAD-Dateien stelle ich in diesem Repository derzeit nicht bereit. Die Fotos und Screenshots zeigen verschiedene Entwicklungsstände.
+Auf GitHub zeige ich erst einmal den Aufbau und die Funktionen. Die Firmware und die vollständigen CAD-Dateien sind hier nicht enthalten. Manche Fotos und Screenshots stammen noch aus älteren Entwicklungsständen.
 
 [PDF-Leseprobe: die ersten zwei Seiten der Anleitung 096-351](dokumentation/Poolwerk_096-351_Anleitung_Leseprobe_Seiten_1-2.pdf)
 
