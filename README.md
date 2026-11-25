@@ -214,7 +214,7 @@ Beim aktiven Chlor wird aus DPD1, Cyanursäure und pH ein Modellwert bei 25 °C 
 
 </details>
 
-## Selbst gezeichnet und gedruckt
+## Konstruktionen aus Fusion
 
 Die Belimo-Halterungen, Adapter und Betätigungsteile für die Endschalter habe ich in Fusion gezeichnet und an meine Ventile angepasst. Dazu gehören auch ein längerer Mikroschalter-Pin, Stopfen für die Messsonden und die Gestaltung des Gehäuses.
 
